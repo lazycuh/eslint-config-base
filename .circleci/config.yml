@@ -1,0 +1,86 @@
+version: 2.1
+
+install-pnpm: &install-pnpm
+  name: Installing pnpm package manager
+  command: |
+    corepack enable
+    corepack prepare pnpm@latest-8 --activate
+
+jobs:
+  versioning:
+    docker:
+      - image: node:18
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - '$USER_KEY'
+      - run:
+          name: Bumping version
+          command: |
+            chmod +x .circleci/scripts/versioning.sh
+            .circleci/scripts/versioning.sh
+
+  check-code-styles:
+    docker:
+      - image: node:18
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restoring pnpm package cache
+          keys:
+            - pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+      - run: *install-pnpm
+      - run:
+          name: Installing dependencies
+          command: |
+            pnpm install
+      - run:
+          name: Checking code styles
+          command: |
+            pnpm check-code-styles
+      - save_cache:
+          name: Saving pnpm package cache
+          key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+
+  publish-to-npm-registry:
+    docker:
+      - image: node:18
+    steps:
+      - checkout
+      - run: *install-pnpm
+      - attach_workspace:
+          at: .
+      - run:
+          name: Publishing to npm registry
+          command: |
+            pnpm build
+            chmod +x .circleci/scripts/publish-to-npm-registry.sh
+            .circleci/scripts/publish-to-npm-registry.sh
+
+workflows:
+  deployment:
+    jobs:
+      - versioning:
+          filters:
+            branches:
+              only: main
+          context:
+            - gh
+      - check-code-styles:
+          requires:
+            - versioning
+      - publish-to-npm-registry:
+          requires:
+            - check-code-styles
+          filters:
+            branches:
+              only: main
+          context:
+            - npm
