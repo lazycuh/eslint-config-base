@@ -17,9 +17,10 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "husky install",
     "build": "node make-config.js",
-    "check-code-styles": "prettier --check \"(*.js|*.json|*.md)\""
+    "check-code-styles": "prettier --check \"(*.js|*.json|*.md)\"",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^1.0.1",
