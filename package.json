@@ -16,6 +16,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "eslint",
+    "eslint config",
+    "eslint typescript",
+    "eslint typescript javascript",
+    "eslint node"
+  ],
   "scripts": {
     "build": "node make-config.js",
     "check-code-styles": "prettier --check \"(*.js|*.json|*.md)\"",

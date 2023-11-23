@@ -292,6 +292,7 @@
         ],
         "no-use-before-define": "off",
         "no-useless-rename": "error",
+        "no-useless-concat": "error",
         "no-var": "error",
         "object-shorthand": "error",
         "one-var": ["error", "never"],
