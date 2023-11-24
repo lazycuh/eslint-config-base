@@ -52,7 +52,7 @@
     "lint-staged": "^15.0.2"
   },
   "lint-staged": {
-    "**/*.{json,md,js}": [
+    "**/*.{json,md,js,yaml,yml}": [
       "prettier -w --cache"
     ]
   }
