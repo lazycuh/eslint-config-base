@@ -30,11 +30,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "^1.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "eslint": "^8.53.0",
-    "eslint-config-next": "^14.0.2",
+    "@stylistic/eslint-plugin": "^1.4.1",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.3",
     "eslint-config-typescript": "^3.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
@@ -45,11 +45,11 @@
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-typescript-sort-keys": "^3.1.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "prettier": "^3.0.3"
+    "prettier": "^3.1.0"
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^15.0.2"
+    "lint-staged": "^15.1.0"
   },
   "lint-staged": {
     "**/*.{json,md,js,yaml,yml}": [
