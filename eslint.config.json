@@ -64,7 +64,7 @@
           {
             "blankLine": "always",
             "prev": "*",
-            "next": "return"
+            "next": "block-like"
           }
         ],
         "@typescript-eslint/adjacent-overload-signatures": "error",
