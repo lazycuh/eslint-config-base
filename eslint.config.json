@@ -70,6 +70,11 @@
             "blankLine": "always",
             "prev": "block-like",
             "next": "*"
+          },
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
           }
         ],
         "@typescript-eslint/adjacent-overload-signatures": "error",
