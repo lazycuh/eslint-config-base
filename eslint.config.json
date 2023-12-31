@@ -51,14 +51,6 @@
         "unused-imports"
       ],
       "rules": {
-        "@stylistic/indent": [
-          "error",
-          2,
-          {
-            "SwitchCase": 1,
-            "ignoredNodes": ["PropertyDefinition"]
-          }
-        ],
         "@stylistic/padding-line-between-statements": [
           "error",
           {
