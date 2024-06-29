@@ -1,6 +1,6 @@
 {
   "name": "@babybeet/eslint-config-base",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "module": "index.cjs",
   "type": "module",
