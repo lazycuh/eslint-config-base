@@ -1,3 +1,5 @@
+// @ts-check
+
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
@@ -212,7 +214,7 @@ export default tsEslint.config(
       ],
       '@typescript-eslint/no-misused-new': 'error',
       '@typescript-eslint/no-namespace': 'error',
-      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-parameter-properties': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-unused-expressions': 'error',
@@ -241,6 +243,7 @@ export default tsEslint.config(
         }
       ],
       '@typescript-eslint/type-annotation-spacing': 'error',
+      '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
       '@typescript-eslint/unified-signatures': 'error',
       'arrow-parens': ['off', 'always'],
       'brace-style': ['error', '1tbs'],
@@ -268,6 +271,7 @@ export default tsEslint.config(
         }
       ],
       'import/no-default-export': 'error',
+      '@typescript-eslint/no-extraneous-class': ['error', { allowWithDecorator: true, allowStaticOnly: true }],
       'import/no-extraneous-dependencies': [
         'error',
         {
