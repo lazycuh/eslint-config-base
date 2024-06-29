@@ -2,6 +2,13 @@
 
 Base ESLint rules that work well for any Typescript projects.
 
+## ESLint compatibility
+
+| This library | ESLint |
+| ------------ | ------ |
+| 2.x.x        | ^9     |
+| 1.x.x        | ^8     |
+
 ## Installation
 
 - `npm`
@@ -20,7 +27,35 @@ Base ESLint rules that work well for any Typescript projects.
 
 ## Setting up
 
-In your `.eslintrc.json` file, add the followings:
+### ESLint 9
+
+`eslint.config.js` file
+
+```js
+const eslintConfigBase = require('@babybeet/eslint-config-base');
+
+/**
+ * @type {import('eslint').Linter.FlatConfig[]}
+ */
+module.exports = [
+  ...eslintConfigBase.map(config => ({
+    ...config,
+
+    files: ['src/**/*.ts'], // Only lint Typescript files under `src` directory.
+
+    rules: {
+      ...config.rules
+      // Your rule overrides go here
+    }
+  }))
+];
+```
+
+_If your `package.json` file has `"type": "module"`, you can change the above `require` and `module.exports` to `import` and `export default` respectively_.
+
+### ESLint 8
+
+`.eslintrc.json` file
 
 ```json
 {
