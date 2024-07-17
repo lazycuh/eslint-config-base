@@ -1,4 +1,4 @@
-# eslint-config-base [![](https://circleci.com/gh/babybeet/eslint-config-base.svg?style=svg&logo=appveyor)](https://app.circleci.com/pipelines/github/babybeet/eslint-config-base?branch=main)
+# eslint-config-base [![](https://circleci.com/gh/lazycuh/eslint-config-base.svg?style=svg&logo=appveyor)](https://app.circleci.com/pipelines/github/lazycuh/eslint-config-base?branch=main)
 
 Base ESLint rules that work well for any Typescript projects.
 
@@ -13,16 +13,16 @@ Base ESLint rules that work well for any Typescript projects.
 
 - `npm`
   ```
-  npm i -S @babybeet/eslint-config-base
+  npm i -S @lazycuh/eslint-config-base
   ```
 - `pnpm`
   ```
-  pnpm i -S @babybeet/eslint-config-base
+  pnpm i -S @lazycuh/eslint-config-base
   ```
 - `yarn`
 
   ```
-  yarn add @babybeet/eslint-config-base
+  yarn add @lazycuh/eslint-config-base
   ```
 
 ## Setting up
@@ -32,7 +32,7 @@ Base ESLint rules that work well for any Typescript projects.
 `eslint.config.js` file
 
 ```js
-const eslintConfigBase = require('@babybeet/eslint-config-base');
+const eslintConfigBase = require('@lazycuh/eslint-config-base');
 
 /**
  * @type {import('eslint').Linter.FlatConfig[]}
@@ -70,7 +70,7 @@ _If your `package.json` file has `"type": "module"`, you can change the above `r
   "overrides": [
     {
       "files": ["*.ts"],
-      "extends": ["@babybeet/eslint-config-base"],
+      "extends": ["@lazycuh/eslint-config-base"],
       "rules": {
         // Add your own rule overrides if desired.
       }

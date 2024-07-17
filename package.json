@@ -1,5 +1,5 @@
 {
-  "name": "@babybeet/eslint-config-base",
+  "name": "@lazycuh/eslint-config-base",
   "version": "2.0.2",
   "main": "index.js",
   "module": "index.cjs",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/babybeet/eslint-config-base"
+    "url": "https://github.com/lazycuh/eslint-config-base"
   },
   "exports": {
     "./package.json": {
@@ -38,32 +38,32 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@eslint/compat": "^1.1.0",
+    "@eslint/compat": "^1.1.1",
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.6.0",
+    "@eslint/js": "^9.7.0",
     "@stylistic/eslint-plugin": "^2.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.14.1",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
     "eslint-config-typescript": "^3.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-import-newlines": "^1.4.0",
-    "eslint-plugin-jsdoc": "^48.5.0",
+    "eslint-plugin-jsdoc": "^48.7.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-typescript-sort-keys": "^3.2.0",
     "eslint-plugin-unused-imports": "^4.0.0",
-    "globals": "^15.6.0",
-    "typescript-eslint": "^7.14.1"
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.16.1"
   },
   "devDependencies": {
     "@types/eslint__js": "^8.42.3",
-    "eslint": "^9.6.0",
+    "eslint": "^9.7.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.2"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
   },
   "peerDependencies": {
     "eslint": ">= 9.6.0"
