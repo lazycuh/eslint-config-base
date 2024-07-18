@@ -405,5 +405,11 @@ export default tsEslint.config(
       'use-isnan': 'error',
       'valid-typeof': 'error'
     }
+  },
+  {
+    files: ['**/*.test.ts', '**/*.spec.ts'],
+    rules: {
+      'import/no-extraneous-dependencies': 'off'
+    }
   }
 );
