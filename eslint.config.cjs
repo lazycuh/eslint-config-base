@@ -225,7 +225,14 @@ module.exports = tsEslint.config(
       '@typescript-eslint/prefer-function-type': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/quotes': ['error', 'single'],
-      '@typescript-eslint/restrict-template-expressions': 'error',
+      '@typescript-eslint/triple-slash-reference': [
+        'error',
+        {
+          path: 'always',
+          types: 'prefer-import',
+          lib: 'always'
+        }
+      ],
       '@typescript-eslint/semi': ['error', 'always'],
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
       '@typescript-eslint/triple-slash-reference': [

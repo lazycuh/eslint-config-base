@@ -231,7 +231,13 @@ export default tsEslint.config(
       '@typescript-eslint/prefer-function-type': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/quotes': ['error', 'single'],
-      '@typescript-eslint/restrict-template-expressions': 'error',
+      '@typescript-eslint/restrict-template-expressions': [
+        'error',
+        {
+          allowBoolean: true,
+          allowNumber: true
+        }
+      ],
       '@typescript-eslint/semi': ['error', 'always'],
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
       '@typescript-eslint/triple-slash-reference': [
