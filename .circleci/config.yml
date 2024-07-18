@@ -1,15 +1,20 @@
 version: 2.1
 
+parameters:
+  node-image:
+    type: string
+    default: 'node:18.20.3'
+
 install-pnpm: &install-pnpm
   name: Installing pnpm package manager
   command: |
     corepack enable
-    corepack prepare pnpm@latest-8 --activate
+    corepack prepare pnpm@latest-9 --activate
 
 jobs:
   versioning:
     docker:
-      - image: node:18
+      - image: << pipeline.parameters.node-image >>
     steps:
       - checkout
       - add_ssh_keys:
@@ -23,7 +28,7 @@ jobs:
 
   check-code-styles:
     docker:
-      - image: node:18
+      - image: << pipeline.parameters.node-image >>
     steps:
       - checkout
       - restore_cache:
@@ -51,7 +56,7 @@ jobs:
 
   publish-to-npm-registry:
     docker:
-      - image: node:18
+      - image: << pipeline.parameters.node-image >>
     steps:
       - checkout
       - run: *install-pnpm

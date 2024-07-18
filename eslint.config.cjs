@@ -402,6 +402,7 @@ module.exports = tsEslint.config(
   {
     files: ['**/*.test.ts', '**/*.spec.ts'],
     rules: {
+      '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/unbound-method': 'off',
       'import/no-extraneous-dependencies': 'off'
     }

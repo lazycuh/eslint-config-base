@@ -5,8 +5,9 @@
   "module": "index.cjs",
   "type": "module",
   "author": {
-    "name": "Baby Beet"
+    "name": "Lazy Cuh"
   },
+  "packageManager": "pnpm@9.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/lazycuh/eslint-config-base"
