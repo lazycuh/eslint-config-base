@@ -2,6 +2,12 @@
 
 set -e
 
+if [ "$CIRCLE_BRANCH" != "main" ]
+then
+    echo "Not on main branch, skipping versioning."
+    exit 0
+fi
+
 LATEST_COMMIT_MESSAGE=$(git log -n 1 --format=%s | tr -d "\n")
 
 if [[ "$LATEST_COMMIT_MESSAGE" == "Bumped version to"* ]]; then
@@ -34,7 +40,7 @@ function bumpPackageVersion {
     extractVersionFromPackageJsonFile
 }
 
-if [ $(matchCommitMessagePattern "fix|refactor|feat|breaking(\s*change)?") != "0" ]; then
+if [ $(matchCommitMessagePattern "feat|fix|build|chore|ci|docs|perf|refactor|style|test|breaking(\s*change)?") != "0" ]; then
     bumpPackageVersion
     NEW_VERSION=$(extractVersionFromPackageJsonFile)
 
@@ -49,8 +55,7 @@ if [ $(matchCommitMessagePattern "fix|refactor|feat|breaking(\s*change)?") != "0
     git tag "$NEW_TAG"
     git push origin "$NEW_TAG"
     echo "Created Git tag $NEW_TAG."
+    exit 1
 else
-    echo "Commit message does not start with /fix|refactor|feat|breaking(\s*change)?/, exiting."
+    echo "Commit message does not start with /feat|fix|build|chore|ci|docs|perf|refactor|style|test|breaking(\s*change)?/, no versioning will be performed."
 fi
-
-exit 1

@@ -15,7 +15,6 @@ import sortKeysFix from 'eslint-plugin-sort-keys-fix';
 import stylistic from '@stylistic/eslint-plugin';
 import tsEslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
-import typescriptEslintEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unusedImports from 'eslint-plugin-unused-imports';
 
 import { rules } from './rules.js';
@@ -77,7 +76,6 @@ export default tsEslint.config(
 
     plugins: {
       '@stylistic': stylistic,
-      '@typescript-eslint': typescriptEslintEslintPlugin,
       'import-newlines': importNewlines,
       'simple-import-sort': simpleImportSort,
       'sort-keys-fix': sortKeysFix,

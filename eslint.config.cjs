@@ -11,7 +11,6 @@ const sortKeysFix = require('eslint-plugin-sort-keys-fix');
 const stylistic = require('@stylistic/eslint-plugin');
 const tsEslint = require('typescript-eslint');
 const tsParser = require('@typescript-eslint/parser');
-const typescriptEslintEslintPlugin = require('@typescript-eslint/eslint-plugin');
 const unusedImports = require('eslint-plugin-unused-imports');
 
 const { rules } = require('./rules');
@@ -71,7 +70,6 @@ module.exports = tsEslint.config(
 
     plugins: {
       '@stylistic': stylistic,
-      '@typescript-eslint': typescriptEslintEslintPlugin,
       'import-newlines': importNewlines,
       'simple-import-sort': simpleImportSort,
       'sort-keys-fix': sortKeysFix,

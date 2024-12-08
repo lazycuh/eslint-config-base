@@ -1,4 +1,17 @@
 export const rules = {
+  '@stylistic/member-delimiter-style': [
+    'error',
+    {
+      multiline: {
+        delimiter: 'semi',
+        requireLast: true
+      },
+      singleline: {
+        delimiter: 'semi',
+        requireLast: false
+      }
+    }
+  ],
   '@stylistic/padding-line-between-statements': [
     'error',
     {
@@ -17,6 +30,9 @@ export const rules = {
       next: 'return'
     }
   ],
+  '@stylistic/quotes': ['error', 'single'],
+  '@stylistic/semi': ['error', 'always'],
+  '@stylistic/type-annotation-spacing': 'error',
   '@typescript-eslint/adjacent-overload-signatures': 'error',
   '@typescript-eslint/array-type': [
     'error',
@@ -24,31 +40,31 @@ export const rules = {
       default: 'array-simple'
     }
   ],
-  '@typescript-eslint/ban-types': [
-    'error',
-    {
-      types: {
-        Object: {
-          message: 'Avoid using the `Object` type. Did you mean `object`?'
-        },
-        Function: {
-          message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.'
-        },
-        Boolean: {
-          message: 'Avoid using the `Boolean` type. Did you mean `boolean`?'
-        },
-        Number: {
-          message: 'Avoid using the `Number` type. Did you mean `number`?'
-        },
-        String: {
-          message: 'Avoid using the `String` type. Did you mean `string`?'
-        },
-        Symbol: {
-          message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
-        }
-      }
-    }
-  ],
+  // '@typescript-eslint/ban-types': [
+  //   'error',
+  //   {
+  //     types: {
+  //       Object: {
+  //         message: 'Avoid using the `Object` type. Did you mean `object`?'
+  //       },
+  //       Function: {
+  //         message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.'
+  //       },
+  //       Boolean: {
+  //         message: 'Avoid using the `Boolean` type. Did you mean `boolean`?'
+  //       },
+  //       Number: {
+  //         message: 'Avoid using the `Number` type. Did you mean `number`?'
+  //       },
+  //       String: {
+  //         message: 'Avoid using the `String` type. Did you mean `string`?'
+  //       },
+  //       Symbol: {
+  //         message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
+  //       }
+  //     }
+  //   }
+  // ],
   '@typescript-eslint/consistent-type-assertions': 'error',
   '@typescript-eslint/consistent-type-definitions': 'off',
   '@typescript-eslint/dot-notation': 'error',
@@ -57,19 +73,6 @@ export const rules = {
     'off',
     {
       accessibility: 'explicit'
-    }
-  ],
-  '@typescript-eslint/member-delimiter-style': [
-    'error',
-    {
-      multiline: {
-        delimiter: 'semi',
-        requireLast: true
-      },
-      singleline: {
-        delimiter: 'semi',
-        requireLast: false
-      }
     }
   ],
   '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -145,7 +148,6 @@ export const rules = {
   '@typescript-eslint/prefer-for-of': 'error',
   '@typescript-eslint/prefer-function-type': 'error',
   '@typescript-eslint/prefer-namespace-keyword': 'error',
-  '@typescript-eslint/quotes': ['error', 'single'],
   '@typescript-eslint/restrict-template-expressions': [
     'error',
     {
@@ -153,7 +155,6 @@ export const rules = {
       allowNumber: true
     }
   ],
-  '@typescript-eslint/semi': ['error', 'always'],
   '@typescript-eslint/switch-exhaustiveness-check': 'error',
   '@typescript-eslint/triple-slash-reference': [
     'error',
@@ -163,7 +164,6 @@ export const rules = {
       lib: 'always'
     }
   ],
-  '@typescript-eslint/type-annotation-spacing': 'error',
   '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
   '@typescript-eslint/unified-signatures': 'error',
   'arrow-parens': ['off', 'always'],
